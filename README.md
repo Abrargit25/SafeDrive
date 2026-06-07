@@ -349,7 +349,7 @@ All captures live in `screenShots/`:
 
 ## Demo Video
 
-The demo covers the full application flow: starting and ending a drive, live sensor readings, real-time event detection, score calculation, dashboard and analytics, threshold values, and a code tour of `SensorManager` and `EventDetector`.
+The demo covers the full application flow: starting and ending a drive, live sensor readings, real-time event detection, score calculation, dashboard and analytics, threshold values.
 
 **[Watch SafeDrive Demo on Google Drive](https://drive.google.com/file/d/1J1WnPyeMOcPAVBg2cBYnp8RFHYPaDMVU/view?usp=sharing)**
 
