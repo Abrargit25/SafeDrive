@@ -283,39 +283,38 @@ Each event fires when its condition is true **and** the per-type cooldown has el
 
 ### Home
 
-![Home](screenShots/HomePage.png)
+<img src="screenShots/HomePage.png" width="280" alt="Home screen" />
 
 Built with `HomeLanding` — a full-screen cover image (`HomeScreenBackgroundImg1.png`) positioned with `getAdaptiveCoverLayout`, a top `LinearGradient` fade, and glass-style action buttons. Data comes from `DriveContext.isDriving`; tapping **Start Drive** calls `startDrive()` which starts sensors and GPS, then navigates to Live Drive. No SQLite reads on this screen — it only triggers the pipeline.
 
 ### Live Drive
 
-![Live Drive](screenShots/LiveDrive1.png)
-
-![Live Drive events](screenShots/LiveDrive2.png)
+<img src="screenShots/LiveDrive1.png" width="280" alt="Live Drive dashboard" />
+<img src="screenShots/LiveDrive2.png" width="280" alt="Live Drive events" />
 
 Built with `LiveDriveDashboard` — same immersive background pattern as Home, glass panels (`GlassPanel`), SVG speed arc, and a 2×3 event grid. All values are live from `DriveContext`: `speedKmh`, `elapsedMs`, `readings` (accel/gyro strings), `eventCounts`, and `gpsStatus`. Events increment in real time as `EventDetector` fires; the score is **not** shown live — only counts update until End Drive.
 
 ### Resume Drive (active session)
 
-![Resume Drive](screenShots/ResumeDriveButton.png)
+<img src="screenShots/ResumeDriveButton.png" width="280" alt="Resume Drive" />
 
 Same `HomeLanding` component; when `isDriving` is true the primary button switches to **Resume Drive** and a recording badge appears. State persists in `DriveContext.active` in memory — sensors keep running if you left mid-drive. Tapping Resume navigates back to `/(tabs)/drive` without creating a new SQLite session.
 
 ### History
 
-![History](screenShots/HistoryPage.png)
+<img src="screenShots/HistoryPage.png" width="280" alt="History screen" />
 
 Built with `ScreenContainer` + `HistoryRow` list. On focus, `refreshHistory()` loads all completed sessions from SQLite via `loadDriveSessions()`. Filter chips (All / Good / Fair / Poor) filter client-side by `score`. Each row shows date, score, distance, and duration; **Explain** opens `ai-insight` with the session id; tapping the row calls `openHistorySession()` to reload that trip into `completed` and open Drive Summary.
 
 ### Analytics
 
-![Analytics](screenShots/Analytics.png)
+<img src="screenShots/Analytics.png" width="280" alt="Analytics screen" />
 
 Built with `ScreenContainer`, `ScoreRing`, `EventChart`, and `StatGrid`. All stats are computed in a `useMemo` over `history` from context (SQLite-backed): `avgScore = round(Σ scores / n)`, total events, total distance, and drive time. The donut chart groups events by type across all trips — no new sensor reads; purely aggregated SQL data.
 
 ### Profile
 
-![Profile](screenShots/Profile.png)
+<img src="screenShots/Profile.png" width="280" alt="Profile screen" />
 
 Built with `UserCard`, `AchievementBadge`, `StatGrid`, and `MenuRow` inside `ScreenContainer`. Trip stats (total drives, avg score, total distance, best score) are derived from `history` in `useMemo`. Refreshes history on tab focus. Sign-out clears `AuthContext` only — drive data stays in SQLite.
 
