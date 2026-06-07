@@ -347,11 +347,6 @@ All captures live in `screenShots/`:
 | Repository | [github.com/Abrargit25/SafeDrive](https://github.com/Abrargit25/SafeDrive) |
 | Demo video | [Watch on Google Drive](https://drive.google.com/file/d/1J1WnPyeMOcPAVBg2cBYnp8RFHYPaDMVU/view?usp=sharing) |
 
-## Demo Video
-
-The demo covers the full application flow: starting and ending a drive, live sensor readings, real-time event detection, score calculation, dashboard and analytics, threshold values.
-
-**[Watch SafeDrive Demo on Google Drive](https://drive.google.com/file/d/1J1WnPyeMOcPAVBg2cBYnp8RFHYPaDMVU/view?usp=sharing)**
 
 ## Features
 
